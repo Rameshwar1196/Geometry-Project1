@@ -33,7 +33,7 @@ void read_stl(string fname, vector <triangle>& v)
     ifstream myFile(fname.c_str(), ios::in | ios::binary);
     char header_info[80] = "";
     char nTri[4];
-    unsigned long nTriLong;
+    unsigned long nTriLong = 0;
 
     //read 80 byte header
     if (myFile) {
@@ -64,16 +64,12 @@ void read_stl(string fname, vector <triangle>& v)
 
         }
     }
-
-    // return 0;
-
 }
 
 int main()
 {
-    std::string file_path = "C:/Users/John Snow/Downloads/Cube_3d_printing_sample.stl";
-    file_path = "C:/Users/John Snow/Downloads/stl/Dragon 2.5_stl.stl";
-
+    std::string file_path = "D:/Haridas/UoP/AABBTree/Geometry-Project1/models/Cube_binary.stl";
+    
     std::vector<triangle> triangles;
 
     read_stl(file_path, triangles);
